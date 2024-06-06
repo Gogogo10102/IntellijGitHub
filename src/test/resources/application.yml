@@ -1,0 +1,18 @@
+spring:
+  datasource:
+
+    url: jdbc:h2:mem:test
+    #test는 메모리 모드로 동작하게 한다 -> main과 test의 yml은 분리하는것이 맞으며 springbookt에서는 test시에 자동으로 메모리 모드로 전환하여준다.
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.orm.jdbc.bind: trace
