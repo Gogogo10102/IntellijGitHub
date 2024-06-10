@@ -19,7 +19,7 @@ public class OrderRepository {
     public Order findOne(Long id){
         return em.find(Order.class,id);
     }
-    https://github.com/Gogogo10102/IntellijGitHub.git
+
     //public List<Order> findAll(OrderSearCh orderSearCh){
 
     //  }
