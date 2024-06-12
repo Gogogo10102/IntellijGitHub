@@ -16,6 +16,7 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class OrderRepository {
+
     private final EntityManager em;
 
     public void save(Order order){
@@ -26,7 +27,6 @@ public class OrderRepository {
     }
 
     public List<Order> findAll(OrderSearch orderSearCh){
-
         return em.createQuery("select o from Order o join o.member m" , Order.class) //status, name을 모두 가져온다고 하면 동적쿼리가 되는데 + "where o.status = :status" + "and m.name like :name"
                 .setParameter("status", orderSearCh.getOrderStatus()) //parameter 바인딩
                 .setParameter("name", orderSearCh.getMemberName())

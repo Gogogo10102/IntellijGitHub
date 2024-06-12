@@ -31,7 +31,7 @@ public class MemberController {
         if(result.hasErrors()){
             return "members/createMemberForm";
         } //라이브러리에 thymleaf과 spring이 강하게 integration되어있다.
-        //서버 사이드에서 validation을 하고 문제가 생겨 result에 data 하나가 들어옴 -> (result)에서는 error에 대한 데이터를 찾을 수 있는 method가 많 -> binding result에서 끌고와서 쓸 수 있게 도와준다
+        //서버 사이드에서 validation을 하고 문제가 생겨 result에 data 하나가 들어옴 -> (result)에서는 error에 대한 데이터를 찾을 수 있는 method가 많다 -> binding result에서 끌고와서 쓸 수 있게 도와준다
         //이름만 없을 경우 기입한 data들은 유지가 된다. 해당 data들은 form에 의해 createMemberForm으로 가지고 들어가게되어 다시 form에 뿌려지게 된다.
 
         Address address = new Address(form.getCity(), form.getStreet(), form.getZipcode());
@@ -54,5 +54,4 @@ public class MemberController {
     //DTO, 화면에 맞는 API를 사용하는것이 좋다.
     //핵심 비즈니스 로직과 화면을 분리해서 관리 -> 등록시에는 form을 사용하고 model을 이용해서 화면에 출력하는 형태이지만 data를 DTO로 변환해서 필요한 data만 가져가는것이 좋다.
     //API를 만들때는 절대로 Entity를 웹으로 반환하면 안된다 -> 보안에 문제가 생기며 api spec 자체가 바뀌어버릴 수 있다.
-
 }

@@ -18,7 +18,6 @@ public class HomeController {
     public String home(){
         log.info("home controller");
         return "home";
-
     }
 }
 // "/"로 들어오면 controller에서 view(home)으로 넘어간다 -> include스타일로 대체된 html로 넘어가게 되고 해당 html은 bootstrap의 css를 사용하게 된다.
