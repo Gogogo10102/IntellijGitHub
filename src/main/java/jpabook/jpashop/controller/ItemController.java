@@ -49,7 +49,7 @@ public class ItemController {
     }
     //merge(병합)을 사용하지만 변경감지를 통한 설계가 좋은 설계방법이다.
 
-    @GetMapping("/items/{itemId}/edit") //중간에 있는건 값이 변경될 수 있어 pass variable ->   {}
+    @GetMapping("/items/{itemId}/edit") //중간에 있는건 값이 변경될 수 있어 path variable ->   {}
     public String updateItemForm(@PathVariable("itemId") Long itemId, Model model){ //@PathVariable을 통해서 위와 mapping해준다.
         Book item = (Book)itemService.findOne(itemId); //casting사용(예제의 단순화를 위해)
         BookForm form = new BookForm();;
